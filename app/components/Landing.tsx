@@ -1,20 +1,31 @@
 import { useRef, useEffect } from 'react';
+import { ReactNode } from 'react';
 
 export default function Landing() {
   const scrollRef = useRef(null);
+  type CardProps = {
+    children: ReactNode;
+    className?: string;
+  };
 
-  // Reusable Button component
-  const Button = ({ children, className = '', ...props }) => (
+  type ButtonProps = {
+    children: ReactNode;
+    className?: string;
+  } & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+
+  const Button = ({ children, className = '', ...props }: ButtonProps) => (
     <button {...props} className={`px-5 py-3 rounded-lg font-semibold transition ${className}`}>{children}</button>
   );
 
-  // Reusable Card and CardContent components
-  const Card = ({ children, className = '' }) => (
-    <div className={`shadow-lg rounded-2xl bg-white ${className} flex-shrink-0 w-80`}>{children}</div>
+  const Card = ({ children, className = '' }: CardProps) => (
+    <div className={`shadow-lg rounded-2xl bg-white ${className} flex-shrink-0 w-80`}>
+      {children}
+    </div>
   );
 
-  const CardContent = ({ children, className = '' }) => (
-    <div className={`p-6 text-center space-y-2 ${className}`}>{children}</div>
+  const CardContent = ({ children, className = '' }: CardProps) => (
+    <div className={`p-6 ${className}`}>{children}</div>
   );
 
   // Auto-scroll effect for Sample Works
@@ -76,7 +87,7 @@ export default function Landing() {
       </section>
 
       {/* Portfolio Section with horizontal scroll */}
-    <section className="py-16 px-6 bg-gray-100">
+      <section className="py-16 px-6 bg-gray-100">
         <h2 className="text-3xl font-bold text-center mb-12 text-indigo-700">Sample Works</h2>
         <div ref={scrollRef} className="flex gap-6 overflow-hidden px-4 justify-center">
           <Card>
