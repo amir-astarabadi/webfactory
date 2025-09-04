@@ -2,7 +2,8 @@ import { useRef, useEffect } from 'react';
 import { ReactNode } from 'react';
 
 export default function Landing() {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null); // <-- specify type
+
   type CardProps = {
     children: ReactNode;
     className?: string;
@@ -27,8 +28,6 @@ export default function Landing() {
   const CardContent = ({ children, className = '' }: CardProps) => (
     <div className={`p-6 ${className}`}>{children}</div>
   );
-
-  // Auto-scroll effect for Sample Works
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
