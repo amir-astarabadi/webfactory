@@ -1,0 +1,86 @@
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-gray-50 text-gray-900">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center text-center py-20 px-4 bg-gradient-to-r from-indigo-500 to-blue-600 text-white">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">We Build, Maintain & Deploy Web Apps</h1>
+        <p className="max-w-2xl mb-6 text-lg md:text-xl">
+          From legacy systems to modern full-stack solutions – we deliver scalable, secure, and production-ready applications.
+        </p>
+        <Button size="lg" className="bg-white text-indigo-600 font-semibold">Request a Call</Button>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16 px-6 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="shadow-lg rounded-2xl">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-3">Web Development</h3>
+              <p>We develop apps with Go, PHP, Python, JavaScript, React, and Next.js.</p>
+            </CardContent>
+          </Card>
+          <Card className="shadow-lg rounded-2xl">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-3">Legacy Code Maintenance</h3>
+              <p>We refactor, debug, and modernize existing codebases to improve performance and reliability.</p>
+            </CardContent>
+          </Card>
+          <Card className="shadow-lg rounded-2xl">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-3">Deployment & DevOps</h3>
+              <p>We handle staging, CI/CD, monitoring, and scaling to keep your app production-ready.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section className="py-16 px-6 bg-gray-100">
+        <h2 className="text-3xl font-bold text-center mb-12">Sample Works</h2>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <Card className="shadow-md">
+            <CardContent className="p-4">
+              <div className="h-40 bg-gray-300 rounded mb-4"></div>
+              <h3 className="text-lg font-semibold">E-Commerce Demo</h3>
+              <p className="text-sm text-gray-600">A sample online store with cart, checkout, and payment integration.</p>
+            </CardContent>
+          </Card>
+          <Card className="shadow-md">
+            <CardContent className="p-4">
+              <div className="h-40 bg-gray-300 rounded mb-4"></div>
+              <h3 className="text-lg font-semibold">Task Manager</h3>
+              <p className="text-sm text-gray-600">A project management tool with authentication and role-based access.</p>
+            </CardContent>
+          </Card>
+          <Card className="shadow-md">
+            <CardContent className="p-4">
+              <div className="h-40 bg-gray-300 rounded mb-4"></div>
+              <h3 className="text-lg font-semibold">API Service</h3>
+              <p className="text-sm text-gray-600">A scalable REST API with Go and PostgreSQL.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 px-6 max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-6">Let’s Talk</h2>
+        <p className="mb-6 text-lg text-gray-700">Tell us a bit about your project and we’ll get back to you.</p>
+        <form className="grid gap-4">
+          <input type="text" placeholder="Your Name" className="p-3 rounded-lg border border-gray-300" />
+          <input type="email" placeholder="Your Email" className="p-3 rounded-lg border border-gray-300" />
+          <textarea placeholder="Your Project Brief" className="p-3 rounded-lg border border-gray-300 h-32"></textarea>
+          <Button size="lg" className="bg-indigo-600 text-white font-semibold">Submit</Button>
+        </form>
+      </section>
+
+      <footer className="py-6 text-center text-sm text-gray-500 bg-gray-50">
+        © {new Date().getFullYear()} Your Company Name. All rights reserved.
+      </footer>
+    </main>
+  )
+}
